@@ -20,7 +20,9 @@ public class MyWorld extends World
     aText aText = new aText();
     aHead aHead = new aHead();
     Cannon cannon = new Cannon();
-    Ball ball = new Ball();
+    Ball ball = new Ball(0,0);
+    hText hText = new hText();
+    vText vText = new vText();
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -54,6 +56,8 @@ public class MyWorld extends World
         addObject(aSlider,538,200);
         addObject(aHead,520,172);
         addObject(aText,499,128);
+        addObject(hText,538,120);
+        addObject(vText,538, 80);
     }
 
     public pSlider getpSlider(){
@@ -79,5 +83,11 @@ public class MyWorld extends World
     }
     public Cannon getCannon(){
         return cannon;
+    }
+    public hText gethText(){
+        return hText;
+    }
+    public vText getvText(){
+        return vText;
     }
 }

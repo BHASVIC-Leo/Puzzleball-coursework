@@ -20,17 +20,20 @@ public class Cannon extends Actor
         //Get needed objects
           MyWorld world = (MyWorld)getWorld();
         aSlider aSlider = world.getaSlider();
-        pSlider pSlider = world.getpSlider();
         //Set angle of the cannon
         int angle = aSlider.getAngle();
         setRotation(-angle);
-        //Set power
-        int power = pSlider.getPower();
     }
     public void fire(){
+        boolean fired = false;
         MyWorld world = (MyWorld)getWorld();
-        Ball ball = new Ball();
+        aSlider aSlider = world.getaSlider();
+        pSlider pSlider = world.getpSlider();
+        Ball ball = new Ball(pSlider.getPower(), aSlider.getAngle());
         world.addObject(ball, this.getX(), this.getY());
-        ball.setRotation(getRotation());
+        if (!fired){
+            ball.setRotation(getRotation());
+            fired = true;
+        }
     }
 }

@@ -14,43 +14,69 @@ public class Ball extends Actor
      */
     double vVel=0;
     double hVel=0;
-    public Ball(){
+    int power;
+    double angle;
+    public Ball(int newPower, int newAngle){
         getImage().scale(getImage().getWidth()/3, getImage().getHeight()/3);
+        power = newPower;
+        angle = Math.toRadians(newAngle);
+        //Starting velocities
+         if(angle>=0){
+            vVel=power*Math.sin(angle);
+        }
+        else if(angle<0){
+            vVel=power*Math.sin(angle);
+        }
+        if(angle>=0){
+            hVel=power*Math.cos(angle);
+        }
+        else if(angle<0){
+            hVel=power*Math.cos(angle);
+        }
     }
     public void act()
     {
-        MyWorld world = (MyWorld)getWorld();
-        pSlider pSlider = world.getpSlider();
-        int power = pSlider.getPower();
         resolvehVel();
         resolvevVel();
         setLocation(getX()+(int)hVel,getY()-(int)vVel);
+        updateText();
+        delete();
     }
     public void resolvehVel(){
-        MyWorld world = (MyWorld)getWorld();
-        pSlider pSlider = world.getpSlider();
-        aSlider aSlider = world.getaSlider();
-        int angle = aSlider.getAngle();
-        int power = pSlider.getPower();
-        if(getRotation()>=0){
-            hVel=power*Math.cos(angle);
-        }
-        else if(getRotation()<0){
-            hVel=power*Math.sin(-angle);
-        }
+      
     }
     public void resolvevVel(){
-        MyWorld world = (MyWorld)getWorld();
-        aSlider aSlider = world.getaSlider();
-        int angle = aSlider.getAngle();
-        pSlider pSlider = world.getpSlider();
-        int power = pSlider.getPower();
-        if(getRotation()>=0){
+        if(angle>=0){
             vVel=power*Math.sin(angle);
         }
-        else if(getRotation()<0){
-            vVel=power*Math.cos(-angle);
+        else if(angle<0){
+            vVel=power*Math.sin(angle);
         }
-        vVel=vVel-(9.81/60);
+        if(angle>=0){
+            hVel=power*Math.cos(angle);
+        }
+        else if(angle<0){
+            hVel=power*Math.cos(angle);
+        }
+        vVel=vVel-(9.8);
+    }
+    public double getvVel(){
+        return vVel;
+    }
+    public double gethVel(){
+        return hVel;
+    }
+    public void updateText(){
+        //Sets stat sliders
+        MyWorld world = (MyWorld)getWorld();
+        vText vText = world.getvText();
+        hText hText = world.gethText();
+        hText.updatehVel(hVel);
+        vText.updatevVel(vVel);
+    }
+    public void delete(){
+        if(getX()>=599 || getX()<=1 ||getY()<=1 || getY()>=399){
+            getWorld().removeObject(this);
+        }
     }
 }
