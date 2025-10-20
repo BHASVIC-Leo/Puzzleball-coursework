@@ -21,7 +21,7 @@ public class Ball extends Actor
         power = newPower;
         angle = Math.toRadians(newAngle);
         //Starting velocities
-         if(angle>=0){
+        if(angle>=0){
             vVel=power*Math.sin(angle);
         }
         else if(angle<0){
@@ -33,6 +33,7 @@ public class Ball extends Actor
         else if(angle<0){
             hVel=power*Math.cos(angle);
         }
+        
     }
     public void act()
     {
@@ -46,18 +47,6 @@ public class Ball extends Actor
       
     }
     public void resolvevVel(){
-        if(angle>=0){
-            vVel=power*Math.sin(angle);
-        }
-        else if(angle<0){
-            vVel=power*Math.sin(angle);
-        }
-        if(angle>=0){
-            hVel=power*Math.cos(angle);
-        }
-        else if(angle<0){
-            hVel=power*Math.cos(angle);
-        }
         vVel=vVel-(9.8);
     }
     public double getvVel(){
