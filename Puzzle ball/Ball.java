@@ -28,10 +28,10 @@ public class Ball extends Actor
             vVel=power*Math.sin(angle);
         }
         if(angle>=0){
-            hVel=power*Math.cos(angle);
+            hVel=power*Math.cos(angle)/0.7;
         }
         else if(angle<0){
-            hVel=power*Math.cos(angle);
+            hVel=power*Math.cos(angle)/0.7;
         }
         
     }
@@ -54,6 +54,18 @@ public class Ball extends Actor
     }
     public double gethVel(){
         return hVel;
+    }
+    public void updatehVel(double newhVel){
+        hVel = newhVel;
+    }
+    public void updatevVel(double newvVel){
+        vVel = newvVel;
+    }
+    public int returnX(){
+        return getX();
+    }
+    public int returnY(){
+        return getY();
     }
     public void updateText(){
         //Sets stat sliders
