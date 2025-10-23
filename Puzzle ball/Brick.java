@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Brick extends Obstacle
 {
    public Brick(){
-       getImage().scale(getImage().getWidth()*4, getImage().getHeight());
-       bounce = 0.5;
+       getImage().scale(getImage().getWidth()*4, getImage().getHeight()/2);
+       bounce = 0.7;
    }
 }

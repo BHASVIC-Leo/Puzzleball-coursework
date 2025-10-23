@@ -22,16 +22,16 @@ public class Ball extends Actor
         angle = Math.toRadians(newAngle);
         //Starting velocities
         if(angle>=0){
-            vVel=power*Math.sin(angle);
+            vVel=power*Math.sin(angle)*0.5;
         }
         else if(angle<0){
-            vVel=power*Math.sin(angle);
+            vVel=power*Math.sin(angle)*0.5;
         }
         if(angle>=0){
-            hVel=power*Math.cos(angle)/0.7;
+            hVel=power*Math.cos(angle)*0.5;
         }
         else if(angle<0){
-            hVel=power*Math.cos(angle)/0.7;
+            hVel=power*Math.cos(angle)*0.5;
         }
         
     }
@@ -39,7 +39,32 @@ public class Ball extends Actor
     {
         resolvehVel();
         resolvevVel();
-        setLocation(getX()+(int)hVel,getY()-(int)vVel);
+        int hOffset=0;
+        int vOffset=0;
+        //Check if about to collide with an object
+        Obstacle obstacle = (Obstacle)getOneObjectAtOffset((int)hVel,(int)-(vVel),Obstacle.class);
+        if(obstacle!=null){
+            for(int i=1; i<=10; i++){
+                //If from below
+                if(getY()>obstacle.getY()+obstacle.getHeight()/2-1){
+                    if(getOneObjectAtOffset((int)(hVel*i/10),(int)(vVel*i/10),Obstacle.class)!=null){
+                        hOffset=(int)(hVel*i/10);
+                        vOffset=(int)(vVel*i/10);
+                    }
+                }
+                //If from above
+                if(getY()<obstacle.getY()-obstacle.getHeight()/2+1){
+                    if(getOneObjectAtOffset((int)(hVel*i/10),-(int)(vVel*i/10),Obstacle.class)!=null){
+                        hOffset=(int)(hVel*i/10);
+                        vOffset=-(int)(vVel*i/10);
+                    }
+                }
+            }
+            setLocation(getX()+hOffset,getY()-vOffset);
+        }   
+        else{
+            setLocation(getX()+(int)hVel,getY()-(int)vVel);
+        }
         updateText();
         delete();
     }
@@ -47,7 +72,7 @@ public class Ball extends Actor
       
     }
     public void resolvevVel(){
-        vVel=vVel-(9.8);
+        vVel=vVel-(4.9);
     }
     public double getvVel(){
         return vVel;

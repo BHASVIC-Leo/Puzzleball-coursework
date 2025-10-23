@@ -61,6 +61,13 @@ public class MyWorld extends World
         Brick brick = new Brick();
         addObject(brick,251,348);
         brick.setLocation(338,251);
+        brick.setLocation(284,19);
+        Brick brick2 = new Brick();
+        addObject(brick2,296,385);
+        brick2.setLocation(301,345);
+        brick.setLocation(308,103);
+        brick.setLocation(304,97);
+        brick.setLocation(301,58);
     }
 
     public pSlider getpSlider(){

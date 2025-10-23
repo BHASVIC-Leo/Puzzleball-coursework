@@ -20,10 +20,14 @@ public class Obstacle extends Actor
         }
     }
     public void whenHit(){
+        //Set as variables for easier reading
+        height = getImage().getHeight();
+        width = getImage().getWidth();
         //Gets ball
         Ball ball = (Ball)getOneIntersectingObject(Ball.class);
         if(ball != null){
-            if(ball.getY()<=getY()){
+            //Checks if colliding from above/bellow
+            if(ball.getY()<=getY()-height/2+1||ball.getY()>=getY()+height/2-1){
                 ball.updatevVel(-bounce*ball.getvVel());
             }
             else{
