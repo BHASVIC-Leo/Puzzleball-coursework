@@ -40,7 +40,9 @@ public class Ball extends Actor
         resolvehVel();
         resolvevVel();
         int hOffset=0;
+        boolean hFail=true;
         int vOffset=0;
+        boolean vFail=true;
         //Check if about to collide with an object
         Obstacle obstacle = (Obstacle)getOneObjectAtOffset((int)hVel,(int)-(vVel),Obstacle.class);
         if(obstacle!=null){
@@ -49,16 +51,24 @@ public class Ball extends Actor
                 if(getY()>obstacle.getY()+obstacle.getHeight()/2-1){
                     if(getOneObjectAtOffset((int)(hVel*i/10),(int)(vVel*i/10),Obstacle.class)!=null){
                         hOffset=(int)(hVel*i/10);
+                        hFail=false;
                         vOffset=(int)(vVel*i/10);
+                        vFail=false;
                     }
                 }
                 //If from above
                 if(getY()<obstacle.getY()-obstacle.getHeight()/2+1){
                     if(getOneObjectAtOffset((int)(hVel*i/10),-(int)(vVel*i/10),Obstacle.class)!=null){
                         hOffset=(int)(hVel*i/10);
+                        hFail=false;
                         vOffset=-(int)(vVel*i/10);
+                        vFail=false;
                     }
                 }
+            }
+            if(vFail=true&&getX()>=obstacle.getX()+obstacle.getWidth()/2&&getX()<=obstacle.getX()-obstacle.getWidth()/2){
+                    setLocation(getX(),obstacle.getY()-obstacle.getHeight()+400-getY());
+                    hVel=-hVel;
             }
             setLocation(getX()+hOffset,getY()-vOffset);
         }   
