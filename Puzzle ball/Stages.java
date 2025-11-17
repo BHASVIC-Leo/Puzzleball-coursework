@@ -1,16 +1,16 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
+ * Write a description of class Stages here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class MyWorld extends World
+public class Stages extends World
 {
 
     /**
-     * Constructor for objects of class MyWorld.
+     * Constructor for objects of class Stages.
      * 
      */
     pSlider pSlider = new pSlider();
@@ -23,25 +23,13 @@ public class MyWorld extends World
     Ball ball = new Ball(0,0);
     hText hText = new hText();
     vText vText = new vText();
-    public MyWorld()
+    public Stages()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
         prepare();
-
     }
-    
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
-    private void prepare()
-    {
-
-        Test test = new Test();
-        addObject(test,299,198);
-    }
-    public void stage1(){
+    private void prepare(){
         Blue blue = new Blue();
         addObject(blue,540,200);
         darkGray darkGray = new darkGray();
@@ -73,7 +61,6 @@ public class MyWorld extends World
         brick.setLocation(304,97);
         brick.setLocation(301,58);
     }
-
     public pSlider getpSlider(){
         return pSlider;
     }

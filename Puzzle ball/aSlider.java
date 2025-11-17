@@ -28,13 +28,13 @@ public class aSlider extends Actor
     public void act()
     {
         setOthers();
-        MyWorld world = (MyWorld)getWorld();
+        Stages world = (Stages)getWorld();
         aHead head = world.getaHead();
         //Power equation(placeholder)
         angle = (head.getX()-538)*2;
     }
     public void setOthers(){
-        MyWorld world = (MyWorld)getWorld();
+        Stages world = (Stages)getWorld();
         world.getaText().setLocation(this.getX()+10,this.getY()-20);
     }
     public int getAngle(){

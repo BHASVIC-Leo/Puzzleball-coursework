@@ -18,7 +18,7 @@ public class aText extends Actor
     }
     public void act()
     {
-        MyWorld world = (MyWorld)getWorld();
+        Stages world = (Stages)getWorld();
         angle = world.getaSlider().getAngle();
         GreenfootImage text = new GreenfootImage(65,30);
         setImage(text);

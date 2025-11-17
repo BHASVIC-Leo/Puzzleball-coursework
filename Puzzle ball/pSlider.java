@@ -29,7 +29,7 @@ public class pSlider extends Actor
     public void act()
     {
         setOthers();
-        MyWorld world = (MyWorld)getWorld();
+        Stages world = (Stages)getWorld();
         pHead head = world.getpHead();
         //Power equation(placeholder)
         power = head.getX()-468;
@@ -38,7 +38,7 @@ public class pSlider extends Actor
         return power;
     }
     public void setOthers(){
-        MyWorld world = (MyWorld)getWorld();
+        Stages world = (Stages)getWorld();
         world.getpText().setLocation(this.getX()+10,this.getY()-20);
     }
     

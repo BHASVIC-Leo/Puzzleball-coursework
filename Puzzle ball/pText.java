@@ -18,7 +18,7 @@ public class pText extends Actor
     }
     public void act()
     {
-        MyWorld world = (MyWorld)getWorld();
+        Stages world = (Stages)getWorld();
         power= world.getpSlider().getPower();
         GreenfootImage text = new GreenfootImage(65,30);
         setImage(text);

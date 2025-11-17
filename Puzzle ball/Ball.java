@@ -96,15 +96,9 @@ public class Ball extends Actor
     public void updatevVel(double newvVel){
         vVel = newvVel;
     }
-    public int returnX(){
-        return getX();
-    }
-    public int returnY(){
-        return getY();
-    }
     public void updateText(){
         //Sets stat sliders
-        MyWorld world = (MyWorld)getWorld();
+        Stages world = (Stages)getWorld();;
         vText vText = world.getvText();
         hText hText = world.gethText();
         hText.updatehVel(hVel);

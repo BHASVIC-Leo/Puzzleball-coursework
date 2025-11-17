@@ -27,7 +27,7 @@ public class pHead extends Actor
     public void act()
     {
         //Gets all the needed actors
-        MyWorld world = (MyWorld)getWorld();
+        Stages world = (Stages)getWorld();
         MouseInfo mouse = Greenfoot.getMouseInfo(); 
         pSlider slider = world.getpSlider();
         //Sends head to slider but doesnt repeat to allow movement

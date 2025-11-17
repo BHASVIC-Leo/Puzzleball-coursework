@@ -17,8 +17,8 @@ public class Fire extends Actor
     }
     public void act()
     {
-        MyWorld world = (MyWorld)getWorld();
-        if(Greenfoot.mouseClicked(this) || Greenfoot.isKeyDown("space")){
+        Stages world = (Stages)getWorld();
+      if(Greenfoot.mouseClicked(this) || Greenfoot.isKeyDown("space")){
           world.getCannon().fire();
         }
     }

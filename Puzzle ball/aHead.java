@@ -28,7 +28,7 @@ public class aHead extends Actor
     public void act()
     {
         //Gets all the needed actors
-        MyWorld world = (MyWorld)getWorld();
+        Stages world = (Stages)getWorld();
         MouseInfo mouse = Greenfoot.getMouseInfo(); 
         aSlider slider = world.getaSlider();
         //Sends head to slider but doesnt repeat to allow movement
