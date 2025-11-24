@@ -1,19 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Stage1 here.
+ * Write a description of class Stage3 here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Stage1 extends Stages
+public class Stage3 extends Stages
 {
 
     /**
-     * Constructor for objects of class Stage1.
+     * Constructor for objects of class Stage3.
      * 
      */
-    public Stage1()
+    public Stage3()
     {
         prepare();
     }
@@ -35,7 +35,5 @@ public class Stage1 extends Stages
         addObject(hText,538,120);
         addObject(vText,538, 80);
         addObject(home,565,38);
-        testBrick brick = new testBrick();
-        addObject (brick, 300, 300);
     }
 }

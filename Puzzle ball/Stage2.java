@@ -13,29 +13,16 @@ public class Stage2 extends Stages
      * Constructor for objects of class Stage1.
      * 
      */
-    pSlider pSlider = new pSlider();
-    pText pText = new pText();
-    pHead pHead = new pHead();
-    aSlider aSlider = new aSlider();
-    aText aText = new aText();
-    aHead aHead = new aHead();
-    Cannon cannon = new Cannon();
-    Ball ball = new Ball(0,0);
-    hText hText = new hText();
-    vText vText = new vText();
+    
     public Stage2()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        prepare();
     }
     private void prepare(){
-        Blue blue = new Blue();
         addObject(blue,540,200);
-        darkGray darkGray = new darkGray();
         addObject(darkGray,36,336);
         addObject(cannon,74,228);
-        Wheel wheel = new Wheel();
         addObject(wheel,44,252);
-        Fire fire = new Fire();
         addObject(fire,540,349);
         addObject(pSlider,538,275);
         addObject(pHead,372,268);
@@ -48,7 +35,6 @@ public class Stage2 extends Stages
         addObject(aText,499,128);
         addObject(hText,538,120);
         addObject(vText,538, 80);
-        Brick brick = new Brick();
         addObject(brick,251,348);
         brick.setLocation(338,251);
         brick.setLocation(284,19);
@@ -58,6 +44,7 @@ public class Stage2 extends Stages
         brick.setLocation(308,103);
         brick.setLocation(304,97);
         brick.setLocation(301,58);
+        addObject(home,565,38);
     }
     public pSlider getpSlider(){
         return pSlider;

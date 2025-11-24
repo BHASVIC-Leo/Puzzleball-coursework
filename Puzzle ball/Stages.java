@@ -13,6 +13,12 @@ public class Stages extends World
      * Constructor for objects of class Stages.
      * 
      */
+    Brick brick = new Brick();
+    Brick brick2 = new Brick();
+    Blue blue = new Blue();
+    darkGray darkGray = new darkGray();
+    Wheel wheel = new Wheel();
+    Fire fire = new Fire();
     pSlider pSlider = new pSlider();
     pText pText = new pText();
     pHead pHead = new pHead();
@@ -23,6 +29,7 @@ public class Stages extends World
     Ball ball = new Ball(0,0);
     hText hText = new hText();
     vText vText = new vText();
+    Home home = new Home();
     public Stages()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -30,36 +37,6 @@ public class Stages extends World
         prepare();
     }
     private void prepare(){
-        Blue blue = new Blue();
-        addObject(blue,540,200);
-        darkGray darkGray = new darkGray();
-        addObject(darkGray,36,336);
-        addObject(cannon,74,228);
-        Wheel wheel = new Wheel();
-        addObject(wheel,44,252);
-        Fire fire = new Fire();
-        addObject(fire,540,349);
-        addObject(pSlider,538,275);
-        addObject(pHead,372,268);
-        addObject(pText,543,219);
-        addObject(pSlider,538,240);
-        addObject(pHead,372,268);
-        addObject(pText,543,219);
-        addObject(aSlider,538,200);
-        addObject(aHead,520,172);
-        addObject(aText,499,128);
-        addObject(hText,538,120);
-        addObject(vText,538, 80);
-        Brick brick = new Brick();
-        addObject(brick,251,348);
-        brick.setLocation(338,251);
-        brick.setLocation(284,19);
-        Brick brick2 = new Brick();
-        addObject(brick2,296,385);
-        brick2.setLocation(301,345);
-        brick.setLocation(308,103);
-        brick.setLocation(304,97);
-        brick.setLocation(301,58);
     }
     public pSlider getpSlider(){
         return pSlider;

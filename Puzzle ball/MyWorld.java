@@ -37,41 +37,19 @@ public class MyWorld extends World
      */
     private void prepare()
     {
-
-        Test test = new Test();
-        addObject(test,299,198);
-    }
-    public void stage1(){
-        Blue blue = new Blue();
-        addObject(blue,540,200);
-        darkGray darkGray = new darkGray();
-        addObject(darkGray,36,336);
-        addObject(cannon,74,228);
-        Wheel wheel = new Wheel();
-        addObject(wheel,44,252);
-        Fire fire = new Fire();
-        addObject(fire,540,349);
-        addObject(pSlider,538,275);
-        addObject(pHead,372,268);
-        addObject(pText,543,219);
-        addObject(pSlider,538,240);
-        addObject(pHead,372,268);
-        addObject(pText,543,219);
-        addObject(aSlider,538,200);
-        addObject(aHead,520,172);
-        addObject(aText,499,128);
-        addObject(hText,538,120);
-        addObject(vText,538, 80);
-        Brick brick = new Brick();
-        addObject(brick,251,348);
-        brick.setLocation(338,251);
-        brick.setLocation(284,19);
-        Brick brick2 = new Brick();
-        addObject(brick2,296,385);
-        brick2.setLocation(301,345);
-        brick.setLocation(308,103);
-        brick.setLocation(304,97);
-        brick.setLocation(301,58);
+        button1 button1 = new button1();
+        addObject(button1,166,200);
+        button2 button2 = new button2();
+        addObject(button2,379,179);
+        button2.setLocation(378,207);
+        button3 button3 = new button3();
+        addObject(button3,514,189);
+        button1.setLocation(122,203);
+        button2.setLocation(329,209);
+        button3.setLocation(462,194);
+        button2.setLocation(309,196);
+        button3.setLocation(491,209);
+        button1.setLocation(132,218);
     }
 
     public pSlider getpSlider(){

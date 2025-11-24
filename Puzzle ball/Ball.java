@@ -46,22 +46,22 @@ public class Ball extends Actor
         //Check if about to collide with an object
         Obstacle obstacle = (Obstacle)getOneObjectAtOffset((int)hVel,(int)-(vVel),Obstacle.class);
         if(obstacle!=null){
-            for(int i=1; i<=10; i++){
+            for(int i=1; i<=40; i++){
                 //If from below
                 if(getY()>obstacle.getY()+obstacle.getHeight()/2-1){
-                    if(getOneObjectAtOffset((int)(hVel*i/10),(int)(vVel*i/10),Obstacle.class)!=null){
-                        hOffset=(int)(hVel*i/10);
+                    if(getOneObjectAtOffset((int)(hVel*i/40),(int)(vVel*i/40),Obstacle.class)!=null){
+                        hOffset=(int)(hVel*i/40);
                         hFail=false;
-                        vOffset=(int)(vVel*i/10);
+                        vOffset=(int)(vVel*i/40);
                         vFail=false;
                     }
                 }
                 //If from above
                 if(getY()<obstacle.getY()-obstacle.getHeight()/2+1){
-                    if(getOneObjectAtOffset((int)(hVel*i/10),-(int)(vVel*i/10),Obstacle.class)!=null){
-                        hOffset=(int)(hVel*i/10);
+                    if(getOneObjectAtOffset((int)(hVel*i/40),-(int)(vVel*i/40),Obstacle.class)!=null){
+                        hOffset=(int)(hVel*i/40);
                         hFail=false;
-                        vOffset=-(int)(vVel*i/10);
+                        vOffset=-(int)(vVel*i/40);
                         vFail=false;
                     }
                 }
