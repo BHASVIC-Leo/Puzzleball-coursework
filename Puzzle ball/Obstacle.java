@@ -19,23 +19,19 @@ public class Obstacle extends Actor
             //whenHit();
         }
     }
-    public void whenHit(){
+    public void whenHit(Ball ball){
         //Set as variables for easier reading
         height = getImage().getHeight();
         width = getImage().getWidth();
-        //Gets ball
-        Ball ball = (Ball)getOneIntersectingObject(Ball.class);
-        if(ball != null){
-            //Checks if colliding from above/below
-            if(ball.getY()<=getY()+height/2+1||ball.getY()>=getY()-height/2-1){
+       //Checks if colliding from above/below
+       if(ball.getY()<=getY()-height/2+1||ball.getY()>=getY()+height/2-1){
                 ball.updatevVel(-bounce*ball.getvVel());
-            }
+       }
             else{
                 ball.updatehVel(-bounce*ball.gethVel());
-            }
+      }
             //Find angles
             
-        }
     }
     public int getHeight(){
         return height;

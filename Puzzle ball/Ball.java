@@ -37,11 +37,12 @@ public class Ball extends Actor
         
     }
     public void act(){
-        int radius = radius = getImage().getWidth();
+        int radius = radius = getImage().getWidth()/2;
         //Gravity
-        vVel += 4.9;
         buffer--;
+        vVel+=4.9;
         int x=100;
+        //Sets baseline for testing possible next x/y
         double nextX = getX();
         double nextY = getY();
         //Finds which velocity is greater and then uses that to find how small each test increment is
@@ -49,24 +50,21 @@ public class Ball extends Actor
         double stepX = hVel / z;
         double stepY = vVel / z;
         for (int i = 0; i < z; i++) {
+            //Checks each location by adding the "step" onto the last possible location with no collison
             double testX = nextX + stepX;
             double testY = nextY + stepY;
-            //Moves itself by the 
             setLocation((int)testX, (int)testY);
             if (isTouching(Obstacle.class)) {
                 Obstacle obstacle = (Obstacle)getOneIntersectingObject(Obstacle.class);
+                //Sets back by the amount it moved to collide
                 if(buffer <1){
-                    obstacle.whenHit();
-                    //vVel = -0.7*vVel;
-                    //hVel = 0.7*hVel;
-                    buffer=10;
-                    getImage().scale(x,x);
-                    x+=100;
+                    //setLocation((int)testX-(int)stepX, (int)testY-(int)stepY);
+                    obstacle.whenHit(this);
+                    buffer=5;
                     break;
                 }
             } 
             else {
-                // safe, commit movement
                 nextX = testX;
                 nextY = testY;
             }
