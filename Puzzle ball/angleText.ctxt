@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=angleText
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ angleText\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=angleText()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=newAngle
+comment3.target=void\ updateAngle(double)
+numComments=4

@@ -21,8 +21,13 @@ public class testBrick extends Brick
        if(Greenfoot.isKeyDown("e")){
           setRotation(getRotation()+1); 
         }
-        if(Greenfoot.isKeyDown("q")){
+       if(Greenfoot.isKeyDown("q")){
           setRotation(getRotation()-1); 
-        }
+       }
+       //find corners
+       Stages world = (Stages)getWorld();
+       Test test = world.getTest();
+       test.setLocation(getX()+(getImage().getWidth()/2),getY());
+
     }
 }

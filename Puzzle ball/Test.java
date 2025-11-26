@@ -14,9 +14,6 @@ public class Test extends Actor
      */
     public void act()
     {
-        Stages stage2 = new Stage2();
-        if(Greenfoot.mouseClicked(this)){
-            Greenfoot.setWorld(stage2);
-        }
+
     }
 }

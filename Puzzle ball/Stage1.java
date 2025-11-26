@@ -34,8 +34,10 @@ public class Stage1 extends Stages
         addObject(aText,499,128);
         addObject(hText,538,120);
         addObject(vText,538, 80);
+        addObject(angleT, 500, 50);
         addObject(home,565,38);
         testBrick brick = new testBrick();
+        addObject(test,0,0);
         addObject (brick, 300, 300);
     }
 }

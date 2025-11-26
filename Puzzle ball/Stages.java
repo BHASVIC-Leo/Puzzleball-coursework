@@ -13,6 +13,7 @@ public class Stages extends World
      * Constructor for objects of class Stages.
      * 
      */
+    angleText angleT = new angleText();
     Brick brick = new Brick();
     Brick brick2 = new Brick();
     Blue blue = new Blue();
@@ -30,6 +31,7 @@ public class Stages extends World
     hText hText = new hText();
     vText vText = new vText();
     Home home = new Home();
+    Test test = new Test();
     public Stages()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -67,5 +69,11 @@ public class Stages extends World
     }
     public vText getvText(){
         return vText;
+    }
+    public Test getTest(){
+        return test;
+    }
+    public angleText getangleT(){
+        return angleT;
     }
 }
