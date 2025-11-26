@@ -58,7 +58,7 @@ public class Ball extends Actor
                 Obstacle obstacle = (Obstacle)getOneIntersectingObject(Obstacle.class);
                 //Sets back by the amount it moved to collide
                 if(buffer <1){
-                    //setLocation((int)testX-(int)stepX, (int)testY-(int)stepY);
+                    setLocation((int)nextX, (int)nextY);
                     obstacle.whenHit(this);
                     buffer=5;
                     break;
@@ -69,6 +69,7 @@ public class Ball extends Actor
                 nextY = testY;
             }
         }
+        setLocation((int)nextX, (int)nextY);
         updateText();
         delete();
 }

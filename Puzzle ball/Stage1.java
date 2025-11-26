@@ -38,6 +38,6 @@ public class Stage1 extends Stages
         addObject(home,565,38);
         testBrick brick = new testBrick();
         addObject(test,0,0);
-        addObject (brick, 300, 300);
+        addObject (brick, 300, 200);
     }
 }
