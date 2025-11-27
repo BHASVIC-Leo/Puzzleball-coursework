@@ -37,10 +37,10 @@ public class Ball extends Actor
         
     }
     public void act(){
+        boolean collided = false;
         int radius = radius = getImage().getWidth()/2;
         //Gravity
         buffer--;
-        vVel+=4.9;
         int x=100;
         //Sets baseline for testing possible next x/y
         double nextX = getX();
@@ -58,6 +58,7 @@ public class Ball extends Actor
                 Obstacle obstacle = (Obstacle)getOneIntersectingObject(Obstacle.class);
                 //Sets back by the amount it moved to collide
                 if(buffer <1){
+                    collided = true;
                     setLocation((int)nextX, (int)nextY);
                     obstacle.whenHit(this);
                     buffer=5;
@@ -68,6 +69,9 @@ public class Ball extends Actor
                 nextX = testX;
                 nextY = testY;
             }
+        }
+        if (!collided){
+            vVel+=4.9;
         }
         setLocation((int)nextX, (int)nextY);
         updateText();
@@ -86,7 +90,10 @@ public class Ball extends Actor
         vVel = newvVel;
     }
     public double getAngle(){
-        return Math.toDegrees((Math.atan(Math.toRadians(vVel)/Math.toRadians(hVel))));
+        return Math.atan(Math.toRadians(vVel)/Math.toRadians(hVel));
+    }
+    public double getSpeed(){
+        return Math.sqrt(hVel*hVel + vVel*vVel);
     }
     public void updateText(){
         //Sets stat sliders
