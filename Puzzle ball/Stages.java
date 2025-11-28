@@ -14,6 +14,7 @@ public class Stages extends World
      * 
      */
     angleText angleT = new angleText();
+    Flag flag = new Flag();
     Brick brick = new Brick();
     Brick brick2 = new Brick();
     Blue blue = new Blue();
@@ -35,7 +36,7 @@ public class Stages extends World
     public Stages()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(900, 600, 1); 
         prepare();
     }
     private void prepare(){

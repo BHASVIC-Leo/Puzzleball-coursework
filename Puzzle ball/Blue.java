@@ -13,7 +13,7 @@ public class Blue extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public Blue(){
-         getImage().scale(getImage().getWidth()/2, getImage().getHeight());
+         getImage().scale(getImage().getWidth()/2, getImage().getHeight()+200);
     }
     public void act()
     {

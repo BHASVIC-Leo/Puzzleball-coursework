@@ -32,7 +32,7 @@ public class pSlider extends Actor
         Stages world = (Stages)getWorld();
         pHead head = world.getpHead();
         //Power equation(placeholder)
-        power = head.getX()-468;
+        power = head.getX()-getX()+70;
     }
     public int getPower(){
         return power;

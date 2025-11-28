@@ -56,9 +56,9 @@ public class Ball extends Actor
             setLocation((int)testX, (int)testY);
             if (isTouching(Obstacle.class)) {
                 Obstacle obstacle = (Obstacle)getOneIntersectingObject(Obstacle.class);
+                collided = true;
                 //Sets back by the amount it moved to collide
                 if(buffer <1){
-                    collided = true;
                     setLocation((int)nextX, (int)nextY);
                     obstacle.whenHit(this);
                     buffer=5;
@@ -107,7 +107,7 @@ public class Ball extends Actor
         vText.updatevVel(vVel);
     }
     public void delete(){
-        if(getX()>=599 || getX()<=1 ||getY()<=1 || getY()>=399){
+        if(isAtEdge()){
             getWorld().removeObject(this);
         }
     }
