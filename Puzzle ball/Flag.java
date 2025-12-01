@@ -14,6 +14,7 @@ public class Flag extends Obstacle
      */
     public void whenHit(Ball ball){
         Stages world = (Stages)getWorld();
+        world.updateWin(world.getstage());
         Win win = new Win();
         world.addObject(win, 450, 200);
     }

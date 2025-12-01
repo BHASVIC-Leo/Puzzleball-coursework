@@ -13,8 +13,13 @@ public class Stage1 extends Stages
      * Constructor for objects of class Stage1.
      * 
      */
-    public Stage1()
+   
+    public Stage1(boolean stage1, boolean stage2, boolean stage3)
     {
+        stage=1;
+        win1 = stage1;
+        win2 = stage2;
+        win3 = stage3;
         prepare();
     }
     public void prepare(){

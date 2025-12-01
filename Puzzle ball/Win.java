@@ -16,7 +16,10 @@ public class Win extends SelectButton
         getImage().scale(getImage().getWidth()/2, getImage().getHeight()/2);
     }
     public void select(){
-        MyWorld home = new MyWorld();
-        Greenfoot.setWorld(home);
+        Stages world = (Stages)getWorld();
+           MyWorld home = new MyWorld(world.getwin1(), world.getwin2(), world.getwin3());
+           if(Greenfoot.mouseClicked(this)){
+            Greenfoot.setWorld(home);
+        }
     }
 }

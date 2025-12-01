@@ -14,8 +14,12 @@ public class Stage2 extends Stages
      * 
      */
     
-    public Stage2()
-    {    
+    public Stage2(boolean stage1, boolean stage2, boolean stage3)
+    {
+        stage=2;
+        win1 = stage1;
+        win2 = stage2;
+        win3 = stage3;
         prepare();
     }
     private void prepare(){

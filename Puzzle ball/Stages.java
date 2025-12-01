@@ -33,6 +33,10 @@ public class Stages extends World
     vText vText = new vText();
     Home home = new Home();
     Test test = new Test();
+    boolean win1;
+    boolean win2;
+    boolean win3;
+    int stage;
     public Stages()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -76,5 +80,28 @@ public class Stages extends World
     }
     public angleText getangleT(){
         return angleT;
+    }
+    public boolean getwin1(){
+        return win1;
+    }
+    public boolean getwin2(){
+        return win2;
+    }
+    public boolean getwin3(){
+        return win3;
+    }
+    public int getstage(){
+        return stage;
+    }
+    public void updateWin(int stageNum){
+        if(stageNum==1){
+            win1=true;
+        }
+        if(stageNum==2){
+            win2=true;
+        }
+        if(stageNum==3){
+            win3=true;
+        }
     }
 }

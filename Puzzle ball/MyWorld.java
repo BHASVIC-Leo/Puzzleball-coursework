@@ -23,10 +23,16 @@ public class MyWorld extends World
     Ball ball = new Ball(0,0);
     hText hText = new hText();
     vText vText = new vText();
-    public MyWorld()
+    boolean win1=false;
+    boolean win2=false;
+    boolean win3=false;
+    public MyWorld(boolean stage1, boolean stage2, boolean stage3)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
+        win1 = stage1;
+        win2 = stage2;
+        win3 = stage3;
         prepare();
 
     }
@@ -50,6 +56,29 @@ public class MyWorld extends World
         button2.setLocation(309,196);
         button3.setLocation(491,209);
         button1.setLocation(132,218);
+        button3.setLocation(517,174);
+        button2.setLocation(299,259);
+        button3.setLocation(493,163);
+        button1.setLocation(156,167);
+        fCannon cannon = new fCannon();
+        addObject(cannon,144,212);
+        cannon.setLocation(70,266);
+        darkGray darkGray = new darkGray();
+        addObject(darkGray,79,387);
+        darkGray.setLocation(35,351);
+        cannon.setLocation(62,231);
+        cannon.setLocation(57,214);
+        Wheel wheel = new Wheel();
+        addObject(wheel,29,268);
+        wheel.setLocation(29,267);
+        cannon.setLocation(49,238);
+        button1.setLocation(145,161);
+        num1 num1 = new num1();
+        addObject(num1,180,169);
+        num2 num2 = new num2();
+        addObject(num2,318,260);
+        num3 num3 = new num3();
+        addObject(num3,525,173);
     }
 
     public pSlider getpSlider(){
@@ -81,5 +110,14 @@ public class MyWorld extends World
     }
     public vText getvText(){
         return vText;
+    }
+    public boolean getwin1(){
+        return win1;
+    }
+    public boolean getwin2(){
+        return win2;
+    }
+    public boolean getwin3(){
+        return win3;
     }
 }

@@ -13,8 +13,9 @@ public class Home extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
-    {
-           MyWorld home = new MyWorld();
+    {   
+        Stages world = (Stages)getWorld();
+           MyWorld home = new MyWorld(world.getwin1(), world.getwin2(), world.getwin3());
            if(Greenfoot.mouseClicked(this)){
             Greenfoot.setWorld(home);
         }

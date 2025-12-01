@@ -16,7 +16,8 @@ public class button2 extends SelectButton
         getImage().scale(getImage().getWidth()/3, getImage().getHeight()/3);
     }
     public void select(){
-        Stages stage2 = new Stage2();
+        MyWorld world = (MyWorld)getWorld();
+        Stages stage2 = new Stage2(world.getwin1(), world.getwin2(), world.getwin3());
         Greenfoot.setWorld(stage2);
     }
 }
