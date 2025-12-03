@@ -18,7 +18,7 @@ public class num3 extends Stagenumbers
         setImage(text);
         MyWorld world = (MyWorld)getWorld();
         if(world.getwin3()){
-            text.setColor(Color.GREEN);
+            text.setColor(Color.GREEN);//If corresponding world has been won change colour to green to signify completion
         }
         else{
            text.setColor(Color.BLACK); 

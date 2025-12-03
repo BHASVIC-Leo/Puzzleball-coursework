@@ -19,6 +19,7 @@ public class num1 extends Stagenumbers
         GreenfootImage text = new GreenfootImage(65,30);
         setImage(text);
         MyWorld world = (MyWorld)getWorld();
+        //If corresponding world has been won change colour to green to signify completion
         if(world.getwin1()){
             text.setColor(Color.GREEN);
         }

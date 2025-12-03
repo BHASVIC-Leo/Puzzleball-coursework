@@ -13,7 +13,7 @@ public class Cannon extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public Cannon(){
-        getImage().scale(getImage().getWidth()/8, getImage().getHeight()/8);
+        getImage().scale(getImage().getWidth()/8, getImage().getHeight()/8);//Sets image to a suitable scale
     }
     public void act()
     {
@@ -25,15 +25,13 @@ public class Cannon extends Actor
         setRotation(-angle);
     }
     public void fire(){
-        boolean fired = false;
+        //Gets sliders
         Stages world = (Stages)getWorld();
         aSlider aSlider = world.getaSlider();
         pSlider pSlider = world.getpSlider();
+        //Shoots ball
         Ball ball = new Ball(pSlider.getPower(), aSlider.getAngle());
         world.addObject(ball, this.getX(), this.getY());
-        if (!fired){
-            ball.setRotation(getRotation());
-            fired = true;
-        }
+        
     }
 }

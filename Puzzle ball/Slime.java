@@ -12,8 +12,11 @@ public class Slime extends Obstacle
      * Act - do whatever the Slime wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public Slime(){
-        getImage().scale(getImage().getWidth(), getImage().getHeight()/2);
+    public Slime(int xOscillate, int yOscillate, int baseRotation){
+       xOsc=xOscillate;
+       yOsc=yOscillate;
+       startRot= baseRotation;
+        getImage().scale(getImage().getWidth()/2, getImage().getHeight()/2);//Sets image to a suitable scale
        bounce = 1.2;
     }
 }

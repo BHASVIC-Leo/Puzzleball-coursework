@@ -14,6 +14,7 @@ public class Home extends Actor
      */
     public void act()
     {   
+        //Creates a home world, passing win states
         Stages world = (Stages)getWorld();
            MyWorld home = new MyWorld(world.getwin1(), world.getwin2(), world.getwin3());
            if(Greenfoot.mouseClicked(this)){

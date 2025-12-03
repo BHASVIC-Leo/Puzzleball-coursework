@@ -12,10 +12,14 @@ public class Flag extends Obstacle
      * Act - do whatever the Flag wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    boolean triggered = false;
     public void whenHit(Ball ball){
         Stages world = (Stages)getWorld();
         world.updateWin(world.getstage());
-        Win win = new Win();
-        world.addObject(win, 450, 200);
+        if(!triggered){
+            Win win = new Win();
+            world.addObject(win, 450, 200);
+            triggered=true;
+        }
     }
 }

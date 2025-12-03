@@ -14,9 +14,6 @@ public class Stages extends World
      * 
      */
     angleText angleT = new angleText();
-    Flag flag = new Flag();
-    Brick brick = new Brick();
-    Brick brick2 = new Brick();
     Blue blue = new Blue();
     darkGray darkGray = new darkGray();
     Wheel wheel = new Wheel();
@@ -32,7 +29,7 @@ public class Stages extends World
     hText hText = new hText();
     vText vText = new vText();
     Home home = new Home();
-    Test test = new Test();
+    Flag flag = new Flag();
     boolean win1;
     boolean win2;
     boolean win3;
@@ -74,9 +71,6 @@ public class Stages extends World
     }
     public vText getvText(){
         return vText;
-    }
-    public Test getTest(){
-        return test;
     }
     public angleText getangleT(){
         return angleT;

@@ -74,11 +74,11 @@ public class MyWorld extends World
         cannon.setLocation(49,238);
         button1.setLocation(145,161);
         num1 num1 = new num1();
-        addObject(num1,180,169);
+        addObject(num1,145,161);
         num2 num2 = new num2();
-        addObject(num2,318,260);
+        addObject(num2,299,249);
         num3 num3 = new num3();
-        addObject(num3,525,173);
+        addObject(num3,493,163);
     }
 
     public pSlider getpSlider(){

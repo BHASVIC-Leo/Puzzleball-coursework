@@ -38,8 +38,6 @@ public class Ball extends Actor
     }
     public void act(){
         boolean collided = false;
-        int radius = radius = getImage().getWidth()/2;
-        //Gravity
         buffer--;
         int x=100;
         //Sets baseline for testing possible next x/y
@@ -66,6 +64,7 @@ public class Ball extends Actor
                 }
             } 
             else {
+                //Sets the safe values
                 nextX = testX;
                 nextY = testY;
             }
@@ -73,6 +72,7 @@ public class Ball extends Actor
         if (!collided){
             vVel+=4.9;
         }
+        //Updates location
         setLocation((int)nextX, (int)nextY);
         updateText();
         delete();

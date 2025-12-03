@@ -13,7 +13,6 @@ public class Stage1 extends Stages
      * Constructor for objects of class Stage1.
      * 
      */
-   
     public Stage1(boolean stage1, boolean stage2, boolean stage3)
     {
         stage=1;
@@ -22,6 +21,7 @@ public class Stage1 extends Stages
         win3 = stage3;
         prepare();
     }
+    
     public void prepare(){
         addObject(blue,840,300);
         addObject(darkGray,36,536);
@@ -41,7 +41,18 @@ public class Stage1 extends Stages
         addObject(vText,838, 180);
         addObject(angleT, 838, 150);
         addObject(home,865,38);
-        testBrick brick = new testBrick();
-        addObject (brick, 300, 200);
+        Slime slime = new Slime(0, 0, 0);
+        addObject(slime,290,511);
+        slime.setLocation(251,521);
+        Honey honey = new Honey(0, 0, 0);
+        addObject(honey,598,495);
+        honey.setLocation(578,521);
+        Flag flag = new Flag();
+        addObject(flag,702,335);
+        Brick brick = new Brick(0, 100, 0);
+        addObject(brick,420,313);
+        Brick brick2 = new Brick(0, 0, 90);
+        addObject(brick2,665,254);
+        brick2.setLocation(703,257);
     }
 }

@@ -21,6 +21,7 @@ public class Stage3 extends Stages
         win3 = stage3;
         prepare();
     }
+    
     public void prepare(){
         addObject(blue,840,300);
         addObject(darkGray,36,536);
@@ -41,5 +42,14 @@ public class Stage3 extends Stages
         addObject(angleT, 838, 150);
         addObject(flag, 700, 520);
         addObject(home,865,38);
+
+        flag.setLocation(426,353);
+        Brick brick = new Brick(0, 0, 0);
+        addObject(brick,358,356);
+        Slime slime = new Slime(0, 0, 30);
+        addObject(slime,628,498);
+        slime.setLocation(538,87);
+        Honey honey = new Honey(0, 0, 330);
+        addObject(honey,564,495);
     }
 }

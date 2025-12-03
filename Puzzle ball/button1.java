@@ -13,7 +13,7 @@ public class button1 extends SelectButton
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public button1(){
-        getImage().scale(getImage().getWidth()/3, getImage().getHeight()/3);
+        getImage().scale(getImage().getWidth()/3, getImage().getHeight()/3);//Sets 
     }
     public void select(){
         MyWorld world = (MyWorld)getWorld();

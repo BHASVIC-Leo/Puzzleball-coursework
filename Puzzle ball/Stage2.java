@@ -22,6 +22,7 @@ public class Stage2 extends Stages
         win3 = stage3;
         prepare();
     }
+    
     private void prepare(){
         addObject(blue,840,300);
         addObject(darkGray,36,536);
@@ -42,17 +43,21 @@ public class Stage2 extends Stages
         addObject(angleT, 838, 150);
         addObject(flag, 700, 520);
         addObject(home,865,38);
-        addObject(brick,251,348);
-        brick.setLocation(338,251);
-        brick.setLocation(284,19);
-        Brick brick2 = new Brick();
-        addObject(brick2,296,385);
-        brick2.setLocation(301,345);
-        brick.setLocation(308,103);
-        brick.setLocation(304,97);
-        brick.setLocation(301,58);
         addObject(home,565,38);
+        Brick brick = new Brick(0, 90, 0);
+        addObject(brick,215,302);
+        brick.setLocation(199,290);
+        Honey honey = new Honey(0, 0, 20);
+        addObject(honey,390,373);
+        testBrick testBrick = new testBrick(50, 0, 90);
+        addObject(testBrick,674,332);
+        removeObject(testBrick);
+        Brick brick2 = new Brick(50, 0, 90);
+        addObject(brick2,691,362);
+        brick2.setLocation(693,357);
+        honey.setLocation(423,443);
     }
+
     public pSlider getpSlider(){
         return pSlider;
     }
